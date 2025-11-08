@@ -52,6 +52,7 @@ def get_data_node_classification(dataset_name, use_validation=False):
 def get_data(dataset_name, different_new_nodes_between_val_and_test=False, randomize_features=False):
   ### Load data and train val test split
   graph_df = pd.read_csv('./data/ml_{}.csv'.format(dataset_name))
+  graph_df = graph_df.sort_values(by='ts', ascending=True).reset_index(drop=True)
   edge_features = np.load('./data/ml_{}.npy'.format(dataset_name))
   node_features = np.load('./data/ml_{}_node.npy'.format(dataset_name)) 
     
@@ -76,6 +77,10 @@ def get_data(dataset_name, different_new_nodes_between_val_and_test=False, rando
   # Compute nodes which appear at test time
   test_node_set = set(sources[timestamps > val_time]).union(
     set(destinations[timestamps > val_time]))
+
+  print(f"n_total_unique_nodes = {n_total_unique_nodes}")
+  print(f"n_total_unique_nodes = {len(test_node_set)}")
+  print(f"n_total_unique_nodes = {len(test_node_set) > (0.1 *n_total_unique_nodes)}")
   # Sample nodes which we keep as new nodes (to test inductiveness), so than we have to remove all
   # their edges from training
   new_test_node_set = set(random.sample(test_node_set, int(0.1 * n_total_unique_nodes)))
