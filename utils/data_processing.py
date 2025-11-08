@@ -18,6 +18,7 @@ class Data:
 def get_data_node_classification(dataset_name, use_validation=False):
   ### Load data and train val test split
   graph_df = pd.read_csv('./data/ml_{}.csv'.format(dataset_name))
+  graph_df = graph_df.sort_values(by='ts', ascending=True).reset_index(drop=True)
   edge_features = np.load('./data/ml_{}.npy'.format(dataset_name))
   node_features = np.load('./data/ml_{}_node.npy'.format(dataset_name))
 
