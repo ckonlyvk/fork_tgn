@@ -20,7 +20,9 @@ def preprocess(data_name):
       ts = float(e[2])
       label = float(e[3])  # int(e[3])
 
-      feat = np.array([float(x) for x in e[4:]])
+      feat_string = e[4].strip('"')
+      feat_values = feat_string.split(',')
+      feat = np.array([float(x) for x in feat_values])
 
       u_list.append(u)
       i_list.append(i)

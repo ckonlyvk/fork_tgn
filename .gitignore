@@ -241,3 +241,20 @@ dmypy.json
 .pytype/
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm,python
+# Python
+__pycache__/
+*.pyc
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# IDE files (IntelliJ, PyCharm, etc.)
+# Bỏ qua toàn bộ thư mục .idea/
+.idea/
+
+# Bỏ qua thư mục build
+dist/
+build/
+*.egg-info/

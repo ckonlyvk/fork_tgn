@@ -69,7 +69,7 @@ def eval_node_classification(tgn, decoder, data, edge_idxs, batch_size, n_neighb
                                                                                    timestamps_batch,
                                                                                    edge_idxs_batch,
                                                                                    n_neighbors)
-      pred_prob_batch = decoder(source_embedding).sigmoid()
+      pred_prob_batch = decoder(destination_embedding).sigmoid()
       pred_prob[s_idx: e_idx] = pred_prob_batch.cpu().numpy()
 
   auc_roc = roc_auc_score(data.labels, pred_prob)
