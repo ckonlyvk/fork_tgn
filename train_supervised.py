@@ -169,7 +169,13 @@ for i in range(args.n_runs):
   decoder = MLP(node_features.shape[1], drop=DROP_OUT)
   decoder_optimizer = torch.optim.Adam(decoder.parameters(), lr=args.lr)
   decoder = decoder.to(device)
-  decoder_loss_criterion = torch.nn.BCELoss()
+
+  labels = torch.tensor(train_data.labels)
+  num_pos = (labels == 1).sum().item()
+  num_neg = (labels == 0).sum().item()
+  pos_weight = torch.tensor([num_neg / num_pos], dtype=torch.float)
+  logger.info(f'Weight: {pos_weight}')
+  decoder_loss_criterion = torch.nn.BCEWithLogitsLoss(pos_weight=pos_weight.to(device))
 
   val_aucs = []
   train_losses = []
