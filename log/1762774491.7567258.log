@@ -1,0 +1,18 @@
+2025-11-10 11:34:51,756 - root - INFO - Namespace(data='etherum', bs=100, prefix='tgn-attn-etherum', n_degree=10, n_head=2, n_epoch=10, n_layer=1, lr=0.0003, patience=5, n_runs=1, drop_out=0.1, gpu=0, node_dim=100, time_dim=100, backprop_every=1, use_memory=True, embedding_module='graph_attention', message_function='identity', aggregator='last', memory_update_at_end=False, message_dim=100, memory_dim=172, different_new_nodes=False, uniform=False, randomize_features=False, use_destination_embedding_in_message=False, use_source_embedding_in_message=False, n_neg=1, use_validation=False, new_node=False)
+2025-11-10 11:34:53,092 - root - DEBUG - Num of training instances: 85000
+2025-11-10 11:34:53,092 - root - DEBUG - Num of batches per epoch: 850
+2025-11-10 11:34:53,092 - root - INFO - Loading saved TGN model
+2025-11-10 11:34:53,202 - root - INFO - TGN models loaded
+2025-11-10 11:34:53,203 - root - INFO - Start training node classification task
+2025-11-10 11:34:57,879 - root - INFO - Weight: tensor([7.2725])
+2025-11-10 11:39:48,720 - root - INFO - Epoch 0: train loss: 1.18748580252423, val auc: 0.6305661757187505, time: 290.8401052951813
+2025-11-10 11:44:36,088 - root - INFO - Epoch 1: train loss: 1.1477511495702406, val auc: 0.6282609952031439, time: 287.36802887916565
+2025-11-10 11:49:21,482 - root - INFO - Epoch 2: train loss: 1.1455556228581596, val auc: 0.6289608738369069, time: 285.3944299221039
+2025-11-10 11:54:10,798 - root - INFO - Epoch 3: train loss: 1.1446294144321891, val auc: 0.6291275190162666, time: 289.3155608177185
+2025-11-10 11:58:57,965 - root - INFO - Epoch 4: train loss: 1.1436709866103003, val auc: 0.6256028078723566, time: 287.1662244796753
+2025-11-10 12:03:47,547 - root - INFO - Epoch 5: train loss: 1.143398927941042, val auc: 0.625411000315641, time: 289.58187079429626
+2025-11-10 12:08:38,862 - root - INFO - Epoch 6: train loss: 1.1435310398831087, val auc: 0.6187260768475008, time: 291.31468892097473
+2025-11-10 12:13:37,008 - root - INFO - Epoch 7: train loss: 1.1428772769254796, val auc: 0.6147076318468563, time: 298.1460454463959
+2025-11-10 12:18:35,339 - root - INFO - Epoch 8: train loss: 1.1426965275231529, val auc: 0.6093465561774525, time: 298.33051776885986
+2025-11-10 12:23:24,887 - root - INFO - Epoch 9: train loss: 1.1423830526015337, val auc: 0.6071151067622778, time: 289.54817962646484
+2025-11-10 12:23:24,888 - root - INFO - test auc: 0.6071151067622778
